@@ -1,0 +1,528 @@
+// Book blocks
+// -----------
+
+#night-mode {
+    .book-blocks {
+        > ul {
+            > li {
+                a.content-block {
+                    transition: box-shadow $timing-normal;
+                    &:hover {
+                        box-shadow: 0 em(3) em(5) 0 rgba($black, 0.375);
+                    }
+                }
+                .content-block {
+                    border-radius: $br-normal;
+                    overflow: hidden;
+                    figure {
+                        .cover {
+                            padding-top: (1.6/1)*100%;
+                            background-size: cover;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            position: relative;
+                            background-color: #676767;
+                            .overlay {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                visibility: hidden;
+                                background-color: rgba($black, 0.85);
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                transition: visibility $timing-normal, opacity $timing-normal;
+                                opacity: 0;
+                                .button {
+                                    width: rem(170);
+                                    max-width: calc(100% - #{$gutter*2});
+                                    margin: em(9) 0;
+                                    transition: opacity $timing-normal, transform $timing-slower, box-shadow $timing-slower, background-color $timing-slower;
+                                    opacity: 0;
+                                    transform: translateY(0.5em);
+                                    &:nth-of-type(2) {
+                                        transform: translateY(1em);
+                                    }
+                                }
+                            }
+                            &:hover {
+                                .overlay {
+                                    visibility: visible;
+                                    opacity: 1;
+                                    .button {
+                                        opacity: 1;
+                                        transform: translateY(0);
+                                    }
+                                }
+                            }
+                        }
+                        figcaption {
+                            padding: em(13) em(12) em(24);
+                            text-align: center;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            background: $light-black;
+                            height: 10em;
+                            h4 {
+                                line-height: 1.125;
+                                font-size: em(18);
+                                margin-bottom: em(1.5);
+                            }
+                            p {
+                                margin-bottom: em(11);
+                                color: $night-color;
+                            }
+                            .rating-display {
+                                display: flex;
+                                li {
+                                    width: em(15);
+                                    height: em(14);
+                                    margin: 0 em(0.5);
+                                    background-image: url('/assets/images/icons/star-empty.svg');
+                                    &.filled {
+                                        background-image: url('/assets/images/icons/star-filled.svg');
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-feature {
+            > ul {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: nowrap;
+                > li {
+                    a:first-child {
+                        figure {
+                            figcaption {
+                                padding: em(10) em(12) em(13);
+                                h4 {
+                                    font-size: em(14);
+                                }
+                                p {
+                                    font-size: em(12);
+                                }
+                            }
+                        }
+                        @include w640 {
+                            & + .button {
+                                width: calc(100% - 2em);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-single {
+            margin-bottom: 0;
+            max-width: em(215);
+            > ul {
+                > li {
+                    width: 100%;
+                    .content-block {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+        &-preview {
+            > ul {
+                > li {
+                    .content-block {
+                        figure {
+                            .cover {
+                                background-color: #676767;
+                                position: relative;
+                                .flex {
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    h4 {
+                                        text-align: center;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.book-top-half {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  // height: 46vh;
+}
+.book-blocks {
+  margin-bottom: $gutter;
+  &.brawlers.book-blocks-small {
+    height: 0;
+    overflow: hidden;
+    background: #2b2b2b;
+    margin: 0;
+    transition: height 0.5s;
+    &.open {
+      padding: 0 0 5px 20px;
+      height: auto;
+    }
+    > ul {
+      flex-wrap: nowrap;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  > ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    > li {
+      width: $col-6;
+      padding: 25px 0 0 0;
+      @include w640 {
+        width: $col-4;
+      }
+      @include w1000 {
+        width: $col-3-lim;
+      }
+      a.content-block {
+        transition: box-shadow $timing-normal;
+        &:hover {
+          box-shadow: 0 em(3) em(5) 0 rgba($black, 0.375);
+        }
+      }
+      .content-block {
+        border-radius: $br-normal;
+        figure {
+          .cover.pending {
+            background-image: url(/assets/images/pending-cover-art.jpg);
+          }
+          .cover {
+            padding-top: (1.6/1)*100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            background-color: $light-gray;
+            &.pending {
+              background-image: url(/assets/images/default-cover-art.jpg);
+              background-size: 100% auto;
+            }
+            .overlay {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              visibility: hidden;
+              background-color: rgba($dark-blue, 0.85);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              transition: visibility $timing-normal, opacity $timing-normal;
+              opacity: 0;
+              .button-red.disabled {
+                background: #efefef;
+                color: #bdbdbd;
+                cursor: default;
+              }
+              .button {
+                width: rem(170);
+                max-width: calc(100% - #{$gutter*2});
+                margin: em(9) 0;
+                transition: opacity $timing-normal, transform $timing-slower, box-shadow $timing-slower, background-color $timing-slower;
+                opacity: 0;
+                transform: translateY(0.5em);
+                &:nth-of-type(2) {
+                  transform: translateY(1em);
+                }
+              }
+            }
+            &:hover {
+              .overlay {
+                visibility: visible;
+                opacity: 1;
+                .button {
+                  opacity: 1;
+                  transform: translateY(0);
+                }
+              }
+            }
+          }
+          figcaption {
+            padding: em(13) em(12) em(24);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 10em;
+            h4 {
+              line-height: 1.125;
+              font-size: em(18);
+              margin-bottom: em(1.5);
+              word-break: break-word;
+              width: 100%;
+              table-layout: fixed;
+            }
+            p {
+              margin-bottom: em(11);
+            }
+            .rating-display {
+              display: flex;
+              li {
+                width: em(15);
+                height: em(14);
+                margin: 0 em(0.5);
+                background-image: url('/assets/images/icons/star-empty.svg');
+                &.filled {
+                  background-image: url('/assets/images/icons/star-filled.svg');
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &-small {
+    > ul {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      > li {
+        margin-left: auto;
+        margin-right: auto;
+        width: $col-6;
+        @include w640 {
+          width: $col-4;
+        }
+        width: calc(50% - 2.5em);
+        @include w1000 {
+          width: calc(33.33% - (3em*(1/3)));
+        }
+        @include w1280 {
+          width: calc(25% - (3em*(1/4)));
+        }
+      }
+    }
+  }
+  &-feature {
+    width: 100%;
+    @include w1000 {
+    }
+    > ul {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      > li {
+        width: calc(50% - #{$gutter/2});
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        a:first-child {
+          figure {
+            figcaption {
+              padding: em(10) em(12) em(13);
+              h4 {
+                font-size: em(14);
+              }
+              p {
+                font-size: em(12);
+              }
+            }
+          }
+          @include w640 {
+            & + .button {
+              width: calc(100% - 2em);
+            }
+          }
+        }
+      }
+    }
+  }
+  &-single {
+    margin-bottom: 0;
+    max-width: em(215);
+    > ul {
+      > li {
+        width: 100%;
+        .content-block {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  &-preview {
+    > ul {
+      > li {
+        .content-block {
+          figure {
+            .cover {
+              background-color: $shade-gray;
+              position: relative;
+              .flex {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                h4 {
+                  text-align: center;
+                }
+
+                img {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.divTable{
+  display: table;
+  width: 100%;
+}
+.divTableRow {
+  display: table-row;
+}
+.divTableHeading {
+  font-family: "clarendon-urw", -apple-system, Georgia, serif;
+  border: none;
+  color: #005876;
+}
+.divTableCell {
+  display: table-cell;
+  padding: 3px 10px;
+  text-transform: capitalize;
+  input {
+    margin: 0 auto;
+  }
+}
+.divTableHead {
+  display: table-cell;
+  padding: 3px 10px;
+  &.isVisible {
+    text-align: center;
+  }
+}
+.divTableFoot {
+  background-color: #EEE;
+  display: table-footer-group;
+  font-weight: bold;
+}
+.divTableBody {
+  display: table-row-group;
+}
+
+.rating-display {
+  display: flex;
+  li {
+    width: em(15);
+    height: em(14);
+    margin: 0 em(0.5);
+    background-image: url('/assets/images/icons/star-empty.svg');
+    &.filled {
+      background-image: url('/assets/images/icons/star-filled.svg');
+    }
+  }
+}
+
+#reviews{
+  .add_review_btn{
+    position: absolute;
+    bottom:0;
+    left: 0;
+    right: 0;
+    background: #F2F5F7;
+  }
+  .add_review{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top:0;
+    background:rgba(0,0,0,0.5);
+    & > div {
+      position: absolute;
+      bottom:0.5rem;
+      left: 0.5rem;
+      right: 0.5rem;
+      top:0.5rem;
+      background:#fff;
+      padding:1rem;
+    }
+    h4{
+      text-align:center;
+      font-size:1.5em;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.comments_add{
+  background:'#fff';
+}
+.comments_block{
+  background: #fff;
+}
+.comment-text {
+  color:#666;
+}
+
+#night-mode{
+  #reviews{
+    .add_review_btn{
+      background: rgba(0,0,0,0.5);
+    }
+    .add_review{
+      background:rgba(200,200,200,0.5);
+      & > div {
+        background:#222324;
+      }
+    }
+  }
+  .comment-text {
+    color: #fff;
+  }
+  .comments_add{
+    background: rgba(0,0,0,0.5);
+    textarea{
+      background:rgba(200,200,200,0.25);
+      color: #fff;
+    }
+  }
+  .comments_block{
+    background: #000;
+  }
+}
+
+button.slick-arrow{
+  z-index:10000000;
+  &.slick-prev{
+    left:-45px;
+  }
+  &.slick-next{
+    right:-45px;
+  }
+}

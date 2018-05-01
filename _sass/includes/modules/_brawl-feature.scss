@@ -1,0 +1,708 @@
+// Brawl feature
+
+// ---------------
+.all-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto 0 auto;
+    .button {
+        width: 30%;
+        margin-left: 10px;
+    }
+    .disabled {
+        background: #ccc;
+        box-shadow: none;
+        cursor: default;
+    }
+}
+.week-this {
+    width: 100%;
+}
+.week-control-last.hide {
+    visibility: hidden;
+}
+.brawlers > ul > li {
+    width: 125px !important;
+    min-width: 125px;
+}
+.active {
+    opacity: 0.1;
+    .button {
+        display: none;
+    }
+}
+.book-spacing {
+    padding: 20px !important;
+}
+#night-mode {
+    .brawl-feature {
+        position: relative;
+        header {
+            background-color: rgba($black, 0.85);
+            color: $white;
+            .flex-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .label {
+                    @include n640 {
+                        font-size: em(15);
+                        &-large {
+                            display: none;
+                        }
+                    }
+                    @include w640 {
+                        &-small {
+                            display: none;
+                        }
+                    }
+                }
+                a {
+                    position: relative;
+                    width: em(75);
+                    transition: opacity $timing-slower, visibility $timing-slower;
+                    @include w640 {
+                        min-width: em(150);
+                    }
+                    &:hover {
+                        opacity: 0.625;
+                    }
+                    &:before, &:after {
+                        content: "";
+                        height: em(16);
+                        width: em(16);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        display: block;
+                        position: absolute;
+                        top: em(6);
+                    }
+                    &.week-control-last {
+                        @include n1280 {
+                            left: em(23);
+                        }
+                        &:before {
+                            left: em(-23);
+                            background-image: url('/assets/images/icons/left-arrow.svg');
+                        }
+                    }
+                    &.week-control-this {
+                        opacity: 0;
+                        visibility: hidden;
+                        @include n1280 {
+                            left: em(-23);
+                        }
+                        text-align: right;
+                        &:before {
+                            right: em(-23);
+                            background-image: url('/assets/images/icons/right-arrow.svg');
+                        }
+                    }
+                }
+            }
+        }
+        &.last-week-showing {
+            header {
+                .flex-row {
+                    h2 {
+                        .week-title {
+                            &-last {
+                                opacity: 1;
+                                visibility: visible;
+                                transform: translateX(0);
+                            }
+                            &-this {
+                                opacity: 0;
+                                visibility: hidden;
+                                transform: translateX(2em);
+                            }
+                        }
+                    }
+                    a.week-control {
+                        &-last {
+                            opacity: 0;
+                            visibility: hidden;
+                        }
+                        &-this {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+            main {
+                .week {
+                    transform: translateX(0);
+                    &-last {
+                        opacity: 1;
+                    }
+                    &-this {
+                        opacity: 0;
+                    }
+                }
+            }
+            footer {
+                h4 {
+                    .week-results {
+                        &-last {
+                            opacity: 1;
+                            visibility: visible;
+                            transform: translateX(0);
+                        }
+                        &-this {
+                            opacity: 0;
+                            visibility: hidden;
+                            transform: translateX(2em);
+                        }
+                    }
+                }
+                a.week-control {
+                    &-last {
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                    &-this {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+        main {
+            background-image: url('/assets/images/brawl-feature-background-night.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            .week {
+                flex-shrink: 0;
+                display: flex;
+                justify-content: center;
+                width: 100vw;
+                transform: translateX(-100vw);
+                transition: transform $timing-slower, opacity $timing-slower;
+                @include w1000 {
+                    width: calc(100vw - #{em(200)});
+                    transform: translateX(calc(-100vw + #{em(200)}));
+                }
+                &-last {
+                    opacity: 0;
+                }
+            }
+            .flex-row {
+                display: flex;
+                max-width: em(1028);
+                margin: 0 auto;
+                justify-content: center;
+                align-items: center;
+                @include w640 {
+                    justify-content: space-between;
+                }
+                .mascot {
+                    img {
+                        width: 100%;
+                    }
+                    .vote-count {
+                        position: absolute;
+                        width: 100%;
+                        top: em(-60);
+                        div {
+                            background-color: $light-black;
+                            display: flex;
+                            flex-direction: column;
+                            text-align: center;
+                            justify-content: center;
+                            align-items: center;
+                            width: em(128);
+                            padding: em(19) 1em;
+                            position: relative;
+                            margin: 0 auto;
+                            top: em(-10);
+                            left: em(-8);
+                            border-radius: $br-normal;
+                            strong {
+                                color: $light-blue;
+                                font-size: em(20);
+                                line-height: 1;
+                            }
+                            span {
+                                line-height: 1.375;
+                                font-size: em(14);
+                            }
+                            &:after {
+                                content: "";
+                                position: absolute;
+                                display: block;
+                                // height: 1em;
+                                // width: 1em;
+                                left: calc(50% - 0.5em);
+                                bottom: -0.625em;
+                                border-left: 0.625em solid transparent;
+                                border-right: 0.625em solid transparent;
+                                border-top: 0.625em solid $light-black;
+                            }
+                        }
+                        &.has-won {
+                            strong {
+                                color: $light-red;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        footer {
+                background-color: #222324;
+            h4 {
+                .week-results {
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    transition: opacity $timing-slower, visibility $timing-slower, transform $timing-slower;
+                    &-this {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: translateX(0);
+                    }
+                    &-last {
+                        opacity: 0;
+                        visibility: hidden;
+                        transform: translateX(-2em);
+                    }
+                    &.is-announced {
+                        color: $light-red;
+                    }
+                }
+                @include n640 {
+                    font-size: em(16);
+                }
+            }
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.brawl-feature {
+    position: relative;
+    header {
+        height: em(59);
+        background-color: rgba($dark-blue, 0.85);
+        padding: em(6) 0 em(8);
+        color: $white;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 em(2) em(5) 0 rgba($black, 0.18);
+        @include n640 {
+            height: em(41);
+        }
+        .flex-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            h2 {
+                position: relative;
+                width: 10em;
+                text-align: center;
+                height: rem(28);
+                @include w640 {
+                    height: rem(45);
+                }
+                .week-title {
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    transition: opacity $timing-slower, visibility $timing-slower, transform $timing-slower;
+                    &-this {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: translateX(0);
+                    }
+                    &-last {
+                        opacity: 0;
+                        visibility: hidden;
+                        transform: translateX(-2em);
+                    }
+                }
+                @include n640 {
+                    font-size: em(16);
+                }
+            }
+            .label {
+                @include n640 {
+                    font-size: em(15);
+                    &-large {
+                        display: none;
+                    }
+                }
+                @include w640 {
+                    &-small {
+                        display: none;
+                    }
+                }
+            }
+            a {
+                position: relative;
+                width: em(75);
+                transition: opacity $timing-slower, visibility $timing-slower;
+                @include w640 {
+                    min-width: em(150);
+                }
+                &:hover {
+                    opacity: 0.625;
+                }
+                &:before, &:after {
+                    content: "";
+                    height: em(16);
+                    width: em(16);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    display: block;
+                    position: absolute;
+                    top: em(6);
+                }
+                &.week-control-last {
+                    @include n1280 {
+                        left: em(23);
+                    }
+                    &:before {
+                        left: em(-23);
+                        background-image: url('/assets/images/icons/left-arrow.svg');
+                    }
+                }
+                &.week-control-this {
+                    opacity: 0;
+                    visibility: hidden;
+                    @include n1280 {
+                        left: em(-23);
+                    }
+                    text-align: right;
+                    &:before {
+                        right: em(-23);
+                        background-image: url('/assets/images/icons/right-arrow.svg');
+                    }
+                }
+            }
+        }
+    }
+    &.last-week-showing {
+        header {
+            .flex-row {
+                h2 {
+                    .week-title {
+                        &-last {
+                            opacity: 1;
+                            visibility: visible;
+                            transform: translateX(0);
+                        }
+                        &-this {
+                            opacity: 0;
+                            visibility: hidden;
+                            transform: translateX(2em);
+                        }
+                    }
+                }
+                a.week-control {
+                    &-last {
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                    &-this {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+        main {
+            .week {
+                transform: translateX(0);
+                &-last {
+                    opacity: 1;
+                }
+                &-this {
+                    opacity: 0;
+                }
+            }
+        }
+        footer {
+            h4 {
+                .week-results {
+                    &-last {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: translateX(0);
+                    }
+                    &-this {
+                        opacity: 0;
+                        visibility: hidden;
+                        transform: translateX(2em);
+                    }
+                }
+            }
+            a.week-control {
+                &-last {
+                    opacity: 0;
+                    visibility: hidden;
+                }
+                &-this {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+    main {
+        background-image: url('/assets/images/brawl-feature-background.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: em(59+6) 0 em(0);
+        display: flex;
+        width: 100vw;
+        @include w640 {
+            padding: 5em 0 0 0;
+        }
+        @include w1000 {
+            width: calc(100vw - #{em(200)});
+        }
+        .week {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            width: 100vw;
+            transform: translateX(-100vw);
+            transition: transform $timing-slower, opacity $timing-slower;
+            @include w1000 {
+                width: calc(100vw - #{em(200)});
+                // transform: translateX(calc(-100vw + #{em(200)}));
+                transform: translateX(-100vw) translateX(#{em(200)});
+            }
+            &-last {
+                opacity: 0;
+            }
+            .container{
+                margin: 0;
+            }
+        }
+        .flex-row {
+            display: flex;
+            max-width: em(1028);
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+            @include w640 {
+                justify-content: space-between;
+            }
+            .book {
+                width: 100%;
+                .button {
+                    margin: 0 auto;
+                }
+                @include w640 {
+                  width: calc(50% - 1em);
+                }
+            }
+            .mascot {
+                max-width: em(244);
+                display: none;
+                margin-top: em(32);
+                position: relative;
+                @include w1000 {
+                    width: 50%;
+                    margin-top: 0;
+                    margin-bottom: em(28);
+                }
+                @include w640 {
+                    display: block;
+                }
+                img {
+                    width: 100%;
+                }
+                @include w1000 {
+                    &:last-of-type {
+                        &.your-pick {
+                            &:after {
+                                left: em(6);
+                            }
+                        }
+                    }
+                }
+                .vote-count {
+                    position: absolute;
+                    width: 100%;
+                    top: em(-60);
+                    div {
+                        background-color: $white;
+                        display: flex;
+                        flex-direction: column;
+                        text-align: center;
+                        justify-content: center;
+                        align-items: center;
+                        width: em(128);
+                        padding: em(19) 1em;
+                        position: relative;
+                        margin: 0 auto;
+                        top: em(-10);
+                        left: em(-8);
+                        border-radius: $br-normal;
+                        strong {
+                            color: $light-blue;
+                            font-size: em(20);
+                            line-height: 1;
+                        }
+                        span {
+                            line-height: 1.375;
+                            font-size: em(14);
+                        }
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            display: block;
+                            // height: 1em;
+                            // width: 1em;
+                            left: calc(50% - 0.5em);
+                            bottom: -0.625em;
+                            border-left: 0.625em solid transparent;
+                            border-right: 0.625em solid transparent;
+                            border-top: 0.625em solid $white;
+                        }
+                    }
+                    &.has-won {
+                        strong {
+                            color: $light-red;
+                        }
+                    }
+                }
+                &.your-pick {
+                    &:after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        background-image: url('/assets/images/pick-banner.svg');
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        width: 100%;
+                        height: em(50);
+                        left: em(-16);
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        background-color: $white;
+        padding: em(10) 0 em(10);
+        h4 {
+            color: $light-blue;
+            text-align: center;
+            width: 15em;
+            position: relative;
+            height: rem(28);
+            margin: 0 auto;
+            width: 100%;
+            .week-results {
+                display: block;
+                position: absolute;
+                width: 100%;
+                transition: opacity $timing-slower, visibility $timing-slower, transform $timing-slower;
+                &-this {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateX(0);
+                }
+                &-last {
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateX(-2em);
+                }
+                &.is-announced {
+                    color: $light-red;
+                }
+            }
+            @include n640 {
+                font-size: em(16);
+            }
+        }
+
+    }
+}
+
+#admin.brawl-feature {
+    .container {
+        min-width: calc(20em - 1.5em);
+        @include w1000 {
+            width: calc(100% - 1.5em);
+        }
+        .mascot {
+            margin: 20px 0 0 0;
+        }
+        .book-blocks-feature {
+            > ul {
+                > li:last-child {
+                    position: relative;
+                    left: 15px;
+                    .book {
+                        margin: 0 20px 0 0;
+                    }
+                }
+            }
+        }
+        select {
+            padding: 0.2em 0.5em;
+        }
+        h2 {
+            float: right;
+            width: 45%;
+            text-align: left;
+            text-indent: 10px;
+        }
+        .week-control-this {
+            width: 35%;
+            span {
+                float: left;
+                line-height: 34px;
+                display: block;
+                padding: 0 5px 0 0;
+            }
+            select {
+                width: auto;
+                float: left;
+            }
+        }
+    }
+    main {
+        width: 100%;
+        .week {
+            transform: none;
+            width: 100%;
+            @include w1000 {
+                width: calc(100%});
+            }
+        }
+    }
+}
+
+@include w640 {
+  .brawl-feature main .flex-row
+  li:first-child{
+    .mascot img{
+      margin-left: 0;
+    }
+  }
+  .mascot img{
+    margin-left: 17px;
+  }
+}

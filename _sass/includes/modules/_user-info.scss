@@ -1,0 +1,80 @@
+// User Info
+// -----------
+.user-info {
+    @include w480 {
+        display: flex;
+        justify-content: space-between;
+    }
+    .main {
+        display: flex;
+        @include n480 {
+            margin-bottom: 2.5em;
+        }
+        .avatar {
+            @include n480 {
+                height: em(54);
+                width: em(54);
+            }
+            margin-right: 1em;
+        }
+        .details {
+            margin-top: em(1.5);
+        }
+        p {
+            font-size: em(12);
+        }
+        .social-links {
+            margin-top: rem(6);
+            display: flex;
+            li {
+                margin-right: 0.75em;
+                a {
+                    &:hover {
+                        opacity: 0.625;
+                    }
+                }
+            }
+        }
+        .button-row {
+            margin-top: 0.75em;
+            display: flex;
+            .button:first-of-type {
+                margin-right: 1em;
+            }
+        }
+    }
+    .progress-meter {
+        @include n480 {
+            margin-left: em(70);
+            max-width: em(194);
+        }
+        width: 100%;
+        max-width: 10em;
+        position: relative;
+        .help-link {
+            position: absolute;
+            right: 0;
+            top: 0.5em;
+        }
+        h4 {
+            margin-bottom: 0;
+        }
+        figure {
+            text-align: center;
+            .meter {
+                border: 1px solid $gray;
+                height: 1em;
+                position: relative;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 80%;
+                    background-color: $dark-blue;
+                }
+            }
+        }
+    }
+}

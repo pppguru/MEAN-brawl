@@ -1,0 +1,91 @@
+// VARIABLES & MIXINS
+// --------------------------------------
+
+// Color palettes
+
+// Day Mode
+$white: #FFFFFF;
+$shade-gray: #F2F5F7;
+$light-gray: #D9DCDD;
+$disabled-gray: #EEEEEE;
+$gray: #B4B6B7;
+$dark-gray: #7D7D7D;
+
+$lighter-black: #222324;
+$light-black: #17181A;
+$black: #000000;
+
+$light-blue: #0FAFFF;
+$blue: #0D9DE5;
+$dark-blue: #005876;
+$xd-blue: #042C40;
+$xxd-blue: #032333;
+
+$light-red: red;
+$red: #E50000;
+$light-green: #10E699;
+$green: #0ECC88;
+$yellow: #FFD20F;
+$pink: #EFB8B8;
+
+// Night Mode
+$black: #000000;
+$night-color: #8d8f90;
+$content-gray: #222324;
+
+// Body font
+$body: 'franklin-gothic-urw', -apple-system, Helvetica, Arial, sans-serif;
+$book: 400; // also supports italic
+$medium: 500; // also supports italic
+
+// Body font
+$heading: 'clarendon-urw', -apple-system, Georgia, serif;
+$regular: 400;
+
+
+// Point sizing mixins
+$base: 16;
+@function em($pixels, $context: $base) {
+	  @return #{$pixels/$context}em;
+}
+
+@function rem($pixels, $context: $base) {
+	  @return #{$pixels/$context}rem;
+}
+
+// Use functions in calc like this:
+// "width: calc(100% - #{em(60)});"
+
+
+// Duration + Timing
+$timing-normal: 0.1875s ease-out;
+$timing-slower: 0.25s ease-out;
+
+// Border Radius
+$br-normal: em(2);
+
+// Line Height
+$lh-normal: 1.75;
+
+// Media queries
+@mixin n480  { @media screen and (max-width: em(479))	{ @content; } }
+@mixin w480  { @media screen and (min-width: em(480))	{ @content; } }
+
+@mixin w270  { @media screen and (min-width: em(270))	{ @content; } }
+
+@mixin n640  { @media screen and (max-width: em(639))	{ @content; } }
+@mixin w640  { @media screen and (min-width: em(640))	{ @content; } }
+
+@mixin n1000 { @media screen and (max-width: em(999))	{ @content; } }
+@mixin w1000 { @media screen and (min-width: em(1000))	{ @content; } }
+
+@mixin n1024 { @media screen and (max-width: 1024px)	{ @content; } }
+@mixin w1024 { @media screen and (min-width: 1024px)	{ @content; } }
+
+@mixin n1280 { @media screen and (max-width: em(1279))	{ @content; } }
+@mixin w1280 { @media screen and (min-width: em(1280))	{ @content; } }
+
+@mixin n1440 { @media screen and (max-width: em(1439))	{ @content; } }
+@mixin w1440 { @media screen and (min-width: em(1440))	{ @content; } }
+
+@mixin w1920 { @media screen and (min-width: em(1920))	{ @content; } }

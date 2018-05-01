@@ -1,0 +1,97 @@
+// Notice 404
+// ----------
+#night-mode {
+    .notice-404 {
+        .flex-row {
+            margin-bottom: 1em;
+            @include w640 {
+                margin-top: 0.75em;
+                display: flex;
+            }
+            figure {
+                overflow: hidden;
+                flex-shrink: 0;
+                margin-bottom: 1.5em;
+                @include w640 {
+                    margin-bottom: initial;
+                    margin-right: 5em;
+                }
+                .img {
+                    max-width: em(230);
+                    margin-top: -5em;
+                }
+                .day {
+                    display: none;
+                }
+            }
+            .copy {
+                h1 {
+                    font-size: 3em;
+                    line-height: 1;
+                    color: $dark-blue;
+                    margin-bottom: 1.25rem;
+                }
+                p, ul {
+                    color: $lighter-black;
+                    font-size: em(18);
+                }
+                p {
+                    margin-bottom: 0.5rem;
+                }
+                ul {
+                    li {
+                        list-style: circle inside;
+                    }
+                }
+            }
+        }
+    }
+}
+.notice-404 {
+    .flex-row {
+        margin-bottom: 1em;
+        @include w640 {
+            margin-top: 0.75em;
+            display: flex;
+        }
+        figure {
+            overflow: hidden;
+            flex-shrink: 0;
+            margin-bottom: 1.5em;
+            @include w640 {
+                margin-bottom: initial;
+                margin-right: 5em;
+            }
+            img {
+                max-width: em(230);
+                margin-top: -5em;
+            }
+            .night {
+                position: relative;
+                top: 5px;
+                left: 2px;
+                display: none;
+            }
+        }
+        .copy {
+            h1 {
+                font-size: 3em;
+                line-height: 1;
+                color: $dark-blue;
+                margin-bottom: 1.25rem;
+            }
+            p, ul {
+                color: $lighter-black;
+                font-size: em(18);
+            }
+            p {
+                margin-bottom: 0.5rem;
+            }
+            ul {
+                li {
+                    list-style: circle inside;
+                }
+            }
+        }
+    }
+}

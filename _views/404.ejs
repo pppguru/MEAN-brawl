@@ -1,0 +1,35 @@
+<% include ./partials/head %>
+	<% include ./partials/mobile-head %>
+	<div class="view">
+		<main class="main-view">
+			<section class="standard-section standard-section-with-sidebar standard-section-min-full standard-section-align-center">
+				<div class="container">
+					<div class="notice-404">
+						<div class="content-block content-block-standard">
+							<div class="flex-row">
+								<figure>
+									<img class="day" src="/assets/images/404.gif" alt="">
+									<img class="night" src="/assets/images/404-black.gif" alt="">
+								</figure>
+								<div class="copy">
+									<h1>I think you’re lost.</h1>
+									<p>Here are some options:</p>
+									<ul>
+										<li>
+											<a href="/">Click here to browse</a>
+										</li>
+										<li>
+											<a href="/dashboard/">Click here to go to your dashboard</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<% include ./partials/main-footer %>
+		</main>
+		<% include ./partials/sidebar %>
+	</div>
+<% include ./partials/end %>

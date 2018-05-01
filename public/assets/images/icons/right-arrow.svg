@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6px" height="8px" viewBox="0 0 6 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Dropdown Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Book-Brawl-UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="4.-BB_Last_Week's_View_Desktop" transform="translate(-1409.000000, -26.000000)" stroke="#FFFFFF">
+            <g id="This-Weeks's-Brawl-BTN" transform="translate(1274.000000, 20.000000)">
+                <g id="Dropdown-Icon" transform="translate(138.000000, 10.000000) rotate(-90.000000) translate(-138.000000, -10.000000) translate(130.000000, 2.000000)">
+                    <polyline points="4 6.04182576 7.97908712 10.0209129 12 6"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

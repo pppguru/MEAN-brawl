@@ -1,0 +1,57 @@
+<% include ./partials/head %>
+	<% include ./partials/mobile-head %>
+<div class="modal">
+	<div class="overlay is-hidden">
+		<div class="content-block-small content-block" id="reset">
+			<h3>Report Issue</h3>
+			<p class="instructions">Please report your issue below and we will get back to you within two business days.</p>
+			<ul class="field-list field-list-small">
+				<li>
+					<textarea name="name" rows="5" cols="40"></textarea>
+				</li>
+			</ul>
+			<div class="submit-row submit-row-small">
+				<div class="buttons">
+					<a class="button button-white" href=".">Close</a>
+					<a class="button button-red" href=".">Submit</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="view">
+	<main class="main-view">
+		<section class="standard-section standard-section-with-sidebar">
+			<div class="container">
+				<div class="flex-row">
+					<div class="content-block content-block-standard">
+						<div id="author"></div>
+					</div>
+					<div>
+						<div class="content-block">
+							<div class="placeholder">
+								<h4>Ad Space</h4>
+							</div>
+						</div>
+						<div class="content-block">
+							<div class="placeholder">
+								<h4>Ad Space</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</section>
+		<% include ./partials/main-footer %>
+	</main>
+	<% include ./partials/sidebar %>
+</div>
+<script>
+var id = '<%= id %>'
+</script>
+<% include ./partials/end %>
+
+

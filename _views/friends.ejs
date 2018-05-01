@@ -1,0 +1,56 @@
+<% include ./partials/head %>
+<% include ./partials/mobile-head %>
+<div class="view">
+	<main class="main-view">
+		<section class="standard-section standard-section-with-sidebar">
+			<div class="container">
+				<div class="flex-row">
+					<div class="content-block content-block-standard">
+
+						<%if (title === 'Following') { %>
+
+			                <header>
+			                    <h3>Following</h3>
+			                </header>
+						    <div className="title-row">
+			                    <h4>Below are a list of user's that you follow:</h4>
+			                </div>
+							<div id="friends"></div>
+
+						<% } else if (title === 'All Users') { %>
+
+							<header>
+			                    <h3>All Users</h3>
+			                </header>
+						    <div className="title-row">
+			                    <h4>Choose a user to edit</h4>
+			                </div>
+							<div id="all-users"></div>
+
+						<% } %>
+
+					</div>
+
+					<div id="ads-div-container">
+
+
+					<!-- <div>
+						<div class="content-block">
+							<div class="placeholder">
+								<h4>Ad Space</h4>
+							</div>
+						</div>
+						<div class="content-block">
+							<div class="placeholder">
+								<h4>Ad Space</h4>
+							</div>
+						</div>
+					</div> -->
+				</div>
+			</div>
+		</section>
+		<% include ./partials/main-footer %>
+	</main>
+	<% include ./partials/sidebar %>
+</div>
+<% include ./partials/end %>

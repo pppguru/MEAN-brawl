@@ -1,0 +1,22 @@
+// Account block
+// ---------------
+
+.account-block {
+    .avatar-selection {
+        padding-top: 1em;
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5em;
+        .avatar {
+            margin-right: 1.5em;
+        }
+        li {
+            display: flex;
+            align-items: center;
+            margin: 0.5em 0;
+            label {
+                padding-left: 0.625em;
+            }
+        }
+    }
+}

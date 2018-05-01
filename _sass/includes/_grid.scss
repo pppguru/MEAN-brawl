@@ -1,0 +1,72 @@
+// GRID
+// --------------------------------------
+$column: ((72+24)/1152) * 100vw;
+$column-limited: ((72+24)/1152) * ((1152/1440)*100vw);
+$column-match: 72/$base*1em;
+$gutter: 24/$base*1em;
+
+$colx1:  $column*1;
+$colx2:  $column*2;
+$colx3:  $column*3;
+$colx4:  $column*4;
+$colx5:  $column*5;
+$colx6:  $column*6;
+$colx7:  $column*7;
+$colx8:  $column*8;
+$colx9:  $column*9;
+$colx10: $column*10;
+$colx11: $column*11;
+$colx12: $column*12;
+
+$col-1:  calc( #{$colx1}  - #{$gutter} );
+$col-2:  calc( #{$colx2}  - #{$gutter} );
+$col-3:  calc( #{$colx3}  - #{$gutter} );
+$col-4:  calc( #{$colx4}  - #{$gutter} );
+$col-5:  calc( #{$colx5}  - #{$gutter} );
+$col-6:  calc( #{$colx6}  - #{$gutter} );
+$col-7:  calc( #{$colx7}  - #{$gutter} );
+$col-8:  calc( #{$colx8}  - #{$gutter} );
+$col-9:  calc( #{$colx9}  - #{$gutter} );
+$col-10: calc( #{$colx10} - #{$gutter} );
+$col-11: calc( #{$colx11} - #{$gutter} );
+$col-12: calc( #{$colx12} - #{$gutter} );
+
+$col-limx1:  $column-limited*1;
+$col-limx2:  $column-limited*2;
+$col-limx3:  $column-limited*3;
+$col-limx4:  $column-limited*4;
+$col-limx5:  $column-limited*5;
+$col-limx6:  $column-limited*6;
+$col-limx7:  $column-limited*7;
+$col-limx8:  $column-limited*8;
+$col-limx9:  $column-limited*9;
+$col-limx10: $column-limited*10;
+$col-limx11: $column-limited*11;
+$col-limx12: $column-limited*12;
+
+$col-1-lim:  calc( #{$col-limx1}  - #{$gutter} );
+$col-2-lim:  calc( #{$col-limx2}  - #{$gutter} );
+$col-3-lim:  calc( #{$col-limx3}  - #{$gutter} );
+$col-4-lim:  calc( #{$col-limx4}  - #{$gutter} );
+$col-5-lim:  calc( #{$col-limx5}  - #{$gutter} );
+$col-6-lim:  calc( #{$col-limx6}  - #{$gutter} );
+$col-7-lim:  calc( #{$col-limx7}  - #{$gutter} );
+$col-8-lim:  calc( #{$col-limx8}  - #{$gutter} );
+$col-9-lim:  calc( #{$col-limx9}  - #{$gutter} );
+$col-10-lim: calc( #{$col-limx10} - #{$gutter} );
+$col-11-lim: calc( #{$col-limx11} - #{$gutter} );
+$col-12-lim: calc( #{$col-limx12} - #{$gutter} );
+
+
+$match-1:  (($column-match + $gutter) * 1 ) - $gutter;
+$match-2:  (($column-match + $gutter) * 2 ) - $gutter;
+$match-3:  (($column-match + $gutter) * 3 ) - $gutter;
+$match-4:  (($column-match + $gutter) * 4 ) - $gutter;
+$match-5:  (($column-match + $gutter) * 5 ) - $gutter;
+$match-6:  (($column-match + $gutter) * 6 ) - $gutter;
+$match-7:  (($column-match + $gutter) * 7 ) - $gutter;
+$match-8:  (($column-match + $gutter) * 8 ) - $gutter;
+$match-9:  (($column-match + $gutter) * 9 ) - $gutter;
+$match-10: (($column-match + $gutter) * 10) - $gutter;
+$match-11: (($column-match + $gutter) * 11) - $gutter;
+$match-12: (($column-match + $gutter) * 12) - $gutter;

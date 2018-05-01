@@ -1,0 +1,59 @@
+#night-mode {
+	color: #fff;
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	.filter-controls,
+	select,
+	input,
+	a,.notice-404 .flex-row .copy p {
+		color: $white;
+	}
+	.button-white {
+		color: red;
+	}
+	.admin-link {
+		color: red;
+	}
+	input,select {
+		background: $light-black;
+	}
+	input.button-red {
+		background-color: red;
+	}
+	hr {
+		border-color: #424242;
+	}
+	input[type="radio"] {
+		border-color: $light-black;
+	}
+	input[type="radio"]:checked {
+		background: #0FAFFF;
+	}
+	.day {
+		display: none;
+	}
+	.night {
+		display: block;
+	}
+	#hide {
+		display: none;
+	}
+	.email-us {
+		p {
+			background: none !important;
+			a {
+				color: #0fafff;
+				span {
+					color: #0fafff !important;
+				}
+			}
+			span {
+				background: none !important;
+			}
+		}
+	}
+}
+

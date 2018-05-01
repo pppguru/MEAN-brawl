@@ -1,0 +1,34 @@
+<% include ./partials/head %>
+	<% include ./partials/mobile-head %>
+<div class="view">
+	<main class="main-view">
+		<section class="standard-section">
+			<div class="container email-us">
+				<div class="content-block content-block-standard account-block">
+					<header>
+						<%if (title !== 'Report Sent' && title !== 'Password Reset') { %>
+						<h3>Almost Done!</h3>
+						<h5>Please check your email to <%if (title === 'Check Email') { %>complete activation. <% } else { %> recover your password. <% } %></h5>
+						<% } else if (title === 'Report Sent') { %>
+						<h3>Thank You!</h3>
+						<h5>We have recieved your report</h5>
+						<p class="lead copy">Please check your email daily for our response!</p>
+						<% } else if (title === 'Password Reset') { %>
+						<h3>Congratulations!</h3>
+						<h5>Your password was reset</h5>
+						<p class="lead copy">Feel free to login at anytime</p>
+						<% } %>
+					</header>
+					<div class="submit-row">
+						<div id="button">
+							<a class="button button-red" href=".">Close</a>
+						</div>
+					</div>
+			   </div>
+			</div>
+		</section>
+		<% include ./partials/main-footer %>
+	</main>
+	<% include ./partials/sidebar %>
+</div>
+<% include ./partials/end %>

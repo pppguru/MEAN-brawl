@@ -1,0 +1,21 @@
+// Filter controls
+// ---------------
+
+.filter-controls {
+    margin-bottom: em(11.5);
+    padding-top: em(3);
+    color: $dark-blue;
+    font-size: em(20);
+    strong {
+        margin-left: em(12);
+    }
+    .flex-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+		select{
+			font-size: 1.5em;
+			margin-top: -5px;
+		}
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Night Mode Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Book-Brawl-UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.-BB_Home_Desktop" transform="translate(-36.000000, -607.000000)" fill="#FFFFFF">
+            <g id="Side-Nav" transform="translate(0.000000, -16.000000)">
+                <g id="Night-Mode-Button" transform="translate(16.000000, 609.000000)">
+                    <g id="Night-Mode-Icon" transform="translate(20.000000, 14.000000)">
+                        <g>
+                            <path d="M15.9199,9.0098 C15.3799,12.9098 12.0499,15.9198 7.9999,15.9198 C3.5799,15.9198 -0.0001,12.3398 -0.0001,7.9198 C-0.0001,3.8698 3.0099,0.5398 6.9099,-0.0002 C5.1599,1.1698 3.9999,3.1598 3.9999,5.4198 C3.9999,9.0098 6.9099,11.9198 10.4999,11.9198 C12.7599,11.9198 14.7499,10.7598 15.9199,9.0098" id="Fill-1"></path>
+                            <polygon id="Fill-4" points="11 6.92 9.71 7.63 9 8.92 8.29 7.63 7 6.92 8.29 6.21 9 4.92 9.71 6.21"></polygon>
+                            <polygon id="Fill-6" points="14 1.92 13.35 2.27 13 2.92 12.65 2.27 12 1.92 12.65 1.57 13 0.92 13.35 1.57"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

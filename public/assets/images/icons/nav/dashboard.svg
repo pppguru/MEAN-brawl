@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Dashboard Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Book-Brawl-UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.-BB_Home_Desktop" transform="translate(-8.000000, -402.000000)" fill="#005876">
+            <g id="Side-Nav" transform="translate(0.000000, -16.000000)">
+                <g id="Dashboard" transform="translate(4.000000, 408.000000)">
+                    <g id="Dashboard-Icon" transform="translate(4.000000, 10.000000)">
+                        <path d="M6.5,7 L0.5,7 C0.224,7 0,6.776 0,6.5 L0,0.5 C0,0.224 0.224,0 0.5,0 L6.5,0 C6.776,0 7,0.224 7,0.5 L7,6.5 C7,6.776 6.776,7 6.5,7 Z M15.5,7 L9.5,7 C9.224,7 9,6.776 9,6.5 L9,0.5 C9,0.224 9.224,0 9.5,0 L15.5,0 C15.776,0 16,0.224 16,0.5 L16,6.5 C16,6.776 15.776,7 15.5,7 Z M6.5,16 L0.5,16 C0.224,16 0,15.776 0,15.5 L0,9.5 C0,9.224 0.224,9 0.5,9 L6.5,9 C6.776,9 7,9.224 7,9.5 L7,15.5 C7,15.776 6.776,16 6.5,16 Z M15.5,16 L9.5,16 C9.224,16 9,15.776 9,15.5 L9,9.5 C9,9.224 9.224,9 9.5,9 L15.5,9 C15.776,9 16,9.224 16,9.5 L16,15.5 C16,15.776 15.776,16 15.5,16 Z" id="Combined-Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
